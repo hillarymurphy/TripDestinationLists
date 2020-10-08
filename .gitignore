@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+#Ignore META-INF 
+META-INF
+
 # Eclipse
 .classpath
 .project
