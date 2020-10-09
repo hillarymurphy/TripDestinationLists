@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Trip;
+
 /**
  * Servlet implementation class EditTripServlet
  */
@@ -34,9 +36,9 @@ public class EditTripServlet extends HttpServlet {
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		
 		Trip tripToUpdate = dao.searchForTripById(tempId);
-		tripToUpdate.setMake(location);
-		tripToUpdate.setModel(state);
-		tripToUpdate.setYear(attraction);
+		tripToUpdate.setLocation(location);
+		tripToUpdate.setState(state);
+		tripToUpdate.setAttraction(attraction);
 		
 		dao.updateTrip(tripToUpdate);
 		
