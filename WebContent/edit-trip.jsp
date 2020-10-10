@@ -10,11 +10,11 @@
 <body>
 <form action = "editTripServlet" method = "post">
 Make: <input type = "text" name = "location" 
-value ="${tripToEdit.make}">
+value ="${tripToEdit.location}">
 Model: <input type = "text" name = "state" 
-value ="${tripToEdit.model}">
+value ="${tripToEdit.state}">
 Year: <input type = "text" name = "attraction" 
-value ="${tripToEdit.year}">
+value ="${tripToEdit.attraction}">
 <input type = "hidden" name = "id" value = "${tripToEdit.id}">
 <input type = "submit" value = "Save Edited Trip">
 </form>
