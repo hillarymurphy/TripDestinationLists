@@ -13,7 +13,7 @@
 <c:forEach items="${requestScope.allTrips}" var="currenttrip">
 <tr>
 	<td><input type="radio" name="id" value="${currenttrip.id}"></td>
-	<td>${currenttrip.loction}</td>
+	<td>${currenttrip.location}</td>
 	<td>${currenttrip.state}</td>
 	<td>${currenttrip.attraction}</td>
 </tr>
