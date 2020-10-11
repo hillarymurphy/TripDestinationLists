@@ -33,10 +33,10 @@ public class ViewAllTripsListsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		TripListDetailsHelper tlh = new TripListDetailsHelper();
 		List<TripListDetails> abc = tlh.getLists();
-		request.setAttribute("allLists", abc);
+		request.setAttribute("allTrips", abc);
 		
 		if (abc.isEmpty() ) {
-			request.setAttribute("allLists", " ");
+			request.setAttribute("allTrips", " ");
 		}
 		
 		getServletContext().getRequestDispatcher("/trip-list-by-user.jsp").forward(request, response);

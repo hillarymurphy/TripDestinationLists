@@ -47,6 +47,7 @@ import javax.persistence.Table;
 			Tourist tourist, List<Trip> listOfItems) {
 		this.id = id;
 		this.listName = listName;
+		this.tripDate = tripDate;
 		this.tourist = tourist;
 		this.listOfTrips = listOfItems;
 	}
@@ -54,12 +55,14 @@ import javax.persistence.Table;
 	public TripListDetails(String listName, LocalDate tripDate,
 			Tourist tourist, List<Trip> listOfItems) {
 		this.listName = listName;
+		this.tripDate = tripDate;
 		this.tourist = tourist;
 		this.listOfTrips = listOfItems;
 	}
 	
 	public TripListDetails(String listName, LocalDate tripDate, Tourist tourist) {
 		this.listName = listName;
+		this.tripDate = tripDate;
 		this.tourist = tourist;
 	}
 
