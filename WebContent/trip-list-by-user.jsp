@@ -17,7 +17,7 @@
 <tr><td colspan="3">Trip Date:${currenttrip.tripDate}</td></tr>
 <tr><td colspan="3">Tourist:${currenttrip.tourist.touristName}</td></tr>
 <c:forEach var = "listVal" items = "${currenttrip.listOfTrips}">
-            <tr><td colspan="3"> Car:
+            <tr><td colspan="3"> Trip:
                 ${listVal.location}, ${listVal.state}, ${listVal.attraction}
                 </td>
             </tr>
