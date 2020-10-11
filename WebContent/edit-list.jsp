@@ -20,14 +20,14 @@ Shopper Name: <input type="text" name="touristName" value="${listToEdit.tourist.
 
 Available Trips:<br />
 
-<select name="allItemsToAdd" multiple size="6">
+<select name="allTripsToAdd" multiple size="6">
 <c:forEach items="${requestScope.allTrips}" var="currentitem">
 <option value = "${currentitem.id}">${currentitem.location} |
 ${currentitem.state} | ${currentitem.attraction}</option>
 </c:forEach>
 </select>
 <br />
-<input type="submit" value="Edit List and Add Items">
+<input type="submit" value="Edit List and Add Trips">
 </form>
 <a href="index.html">Go add new trips instead.</a>
 </body>

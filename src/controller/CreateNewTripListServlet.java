@@ -34,47 +34,49 @@ public class CreateNewTripListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
+		
 		TripHelper th = new TripHelper();
-		String listName = request.getParameter("listName");
-		System.out.println("List Name: "+ listName);
+		String listName = request.getParameter("listName");		
 
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
 		String year = request.getParameter("year");
-		String touristName = request.getParameter("touristName");
 		LocalDate ld;
+		
+		String touristName = request.getParameter("touristName");
 
+		
 		try {
 			ld = LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
 		}catch(NumberFormatException ex) {
 			ld = LocalDate.now();
 		}
-
+		
 		String[] selectedTrips = request.getParameterValues("allTripsToAdd");
-
-		List<Trip> selectedTripsInList = new ArrayList<Trip>(); 
-		//make sure something was selected –otherwise we get a null pointer exception
-		if (selectedTrips != null && selectedTrips.length > 0)
-		{
-			for(int i = 0; i<selectedTrips.length; i++) {
+		List<Trip> selectedTripsInList = new ArrayList<Trip>();
+		
+		//make sure something was selected otherwise we get a null pointer exception
+		
+		if (selectedTrips != null && selectedTrips.length > 0) {
+			for (int i = 0; i<selectedTrips.length; i++) {
 				System.out.println(selectedTrips[i]);
-				Trip t = th.searchForTripById(Integer.parseInt(selectedTrips[i]));
+				Trip t =
+						th.searchForTripById(Integer.parseInt(selectedTrips[i]));
 				selectedTripsInList.add(t);
 			}
 		}
-					
+		
 		Tourist tourist = new Tourist(touristName);
 		TripListDetails tld = new TripListDetails(listName, ld, tourist);
-		tld.setListOfTrips(selectedTripsInList);
-		TripListDetailsHelper tlh = new TripListDetailsHelper();
-		tlh.insertNewTripListDetails(tld);
-
+		tld.setListOfItems(selectedTripsInList);
+		TripListDetailsHelper slh = new TripListDetailsHelper();
+		slh.insertNewTripListDetails(tld);
+		
 		System.out.println("Success!");
 		System.out.println(tld.toString());
-
+		
 		getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
+			
 	}
 
 	/**

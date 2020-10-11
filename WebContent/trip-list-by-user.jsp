@@ -10,13 +10,13 @@
 <body>
 <form method = "post" action="tripListNavigationServlet">
 <table>
-<c:forEach items="${requestScope.allLists}" var="currentlist">
+<c:forEach items="${requestScope.allTrips}" var="currenttrip">
 <tr>
-	<td><input type="radio" name="id" value="${currentlist.id}"></td>
-	<td><h2>${currentlist.listName}</h2></td></tr>
-<tr><td colspan="3">Trip Date: ${currentlist.tripDate}</td></tr>
-<tr><td colspan="3">Tourist:${currentlist.tourist.touristName}</td></tr>
-<c:forEach var="listVal" items="${currentlist.listOfTrips}">
+	<td><input type="radio" name="id" value="${currenttrip.id}"></td>
+	<td><h2>${currenttrip.listName}</h2></td></tr>
+<tr><td colspan="3">Trip Date: ${currenttrip.tripDate}</td></tr>
+<tr><td colspan="3">Tourist:${currenttrip.tourist.touristName}</td></tr>
+<c:forEach var="listVal" items="${currenttrip.listOfTrips}">
 	<tr><td></td><td colspan="3">
 	${listVal.location}, ${listVal.state}, ${listVal.attraction}
 	</td>
