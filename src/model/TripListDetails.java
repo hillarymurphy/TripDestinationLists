@@ -43,7 +43,7 @@ import javax.persistence.Table;
 		
 	}
 	
-	public TripListDetails(int id, String listName, 
+	public TripListDetails(int id, String listName, LocalDate tripDate,
 			Tourist tourist, List<Trip> listOfItems) {
 		this.id = id;
 		this.listName = listName;
@@ -51,14 +51,14 @@ import javax.persistence.Table;
 		this.listOfTrips = listOfItems;
 	}
 
-	public TripListDetails(String listName, 
+	public TripListDetails(String listName, LocalDate tripDate,
 			Tourist tourist, List<Trip> listOfItems) {
 		this.listName = listName;
 		this.tourist = tourist;
 		this.listOfTrips = listOfItems;
 	}
 	
-	public TripListDetails(String listName, Tourist tourist) {
+	public TripListDetails(String listName, LocalDate tripDate, Tourist tourist) {
 		this.listName = listName;
 		this.tourist = tourist;
 	}

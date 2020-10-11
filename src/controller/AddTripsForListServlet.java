@@ -34,7 +34,7 @@ public class AddTripsForListServlet extends HttpServlet {
 	    	   request.setAttribute("allItems", " ");
 	       }
 	       
-	       getServletContext().getRequestDispatcher("/new-trip-list.jsp").forward(request, response);
+	       getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);
 	       
 	}
 

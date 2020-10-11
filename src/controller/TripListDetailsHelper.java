@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import model.Trip;
 import model.TripListDetails;
 
 public class TripListDetailsHelper {
@@ -67,4 +68,11 @@ public class TripListDetailsHelper {
 		em.close();
 		return found;
 	}
+	
+	public List<Trip> showAllTrips(){
+		EntityManager em = emfactory.createEntityManager();
+		List<Trip> allTrips	= em.createQuery("SELECT i FROM Trip i").getResultList();
+		return allTrips;
+		}
+	
 }
