@@ -28,10 +28,10 @@ public class AddTripsForListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			TripHelper dao = new TripHelper();
 	       
-	       request.setAttribute("allItems", dao.showAllTrips());
+	       request.setAttribute("allTrips", dao.showAllTrips());
 	       
 	       if(dao.showAllTrips().isEmpty()) {
-	    	   request.setAttribute("allItems", " ");
+	    	   request.setAttribute("allTrips", " ");
 	       }
 	       
 	       getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);

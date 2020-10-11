@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>New Trip List</title>
 </head>
 <body>
-<form action = "createNewListServlet" method="post">
+<form action = "createNewTripListServlet" method="post">
 List Name: <input type ="text" name = "listName"><br />
 Trip date: <input type ="text" name = "month" placeholder="mm" size="4"> <input type ="text" name = "day" placeholder="dd" size="4">, <input type ="text" name = "year" placeholder="yyyy" size="4">
 Tourist Name: <input type = "text" name = "touristName"><br />

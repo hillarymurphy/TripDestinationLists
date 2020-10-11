@@ -35,7 +35,7 @@ import javax.persistence.Table;
 		( 
 			name="trips_on_list",
 			joinColumns= { @JoinColumn(name="TRIP_LIST_ID", referencedColumnName="TRIP_LIST_ID") },
-			inverseJoinColumns= { @JoinColumn(name="TOURIST_ID", referencedColumnName="ID", unique=true) }
+			inverseJoinColumns= { @JoinColumn(name="TRIP_ID", referencedColumnName="ID", unique=true) }
 			)
 		private List<Trip> listOfTrips;
 	

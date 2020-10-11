@@ -41,7 +41,7 @@ public class TripListNavigationServlet extends HttpServlet {
 		String act = request.getParameter("doThisToList");
 		if (act == null) {
 		// no button has been selected
-			getServletContext().getRequestDispatcher("/viewAllListsServlet").forward(request, response);
+			getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
 			}
 		else if (act.equals("delete")) {
 			try {Integer tempId = Integer.parseInt(request.getParameter("id"));
@@ -64,18 +64,18 @@ public class TripListNavigationServlet extends HttpServlet {
 			
 			TripHelper tldForTrips = new TripHelper();
 			
-			request.setAttribute("allItems", tldForTrips.showAllTrips());
+			request.setAttribute("allTrips", tldForTrips.showAllTrips());
 			
 			if (tldForTrips.showAllTrips().isEmpty()){
-			request.setAttribute("allItems", " ");
+			request.setAttribute("allTrips", " ");
 			}
 			
 			getServletContext().getRequestDispatcher("/edit-trip.jsp").forward(request, response);
 			
 			} catch (NumberFormatException e) {
-				request.setAttribute("allItems", tld.showAllTrips());
+				request.setAttribute("allTrips", tld.showAllTrips());
 				
-				if(tld.showAllTrips().isEmpty()){request.setAttribute("allItems", " ");}
+				if(tld.showAllTrips().isEmpty()){request.setAttribute("allTrips", " ");}
 				getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
 			} 
 		} else if (act.equals("add")) {
