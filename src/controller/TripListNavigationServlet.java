@@ -44,11 +44,12 @@ public class TripListNavigationServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
 			}
 		else if (act.equals("delete")) {
-			try {Integer tempId = Integer.parseInt(request.getParameter("id"));
-		TripListDetails listToDelete = tld.searchForTripListDetailsById(tempId);
-		tld.deleteList(listToDelete);
+			try {
+				Integer tempId = Integer.parseInt(request.getParameter("id"));
+				TripListDetails listToDelete = tld.searchForTripListDetailsById(tempId);
+				tld.deleteList(listToDelete);
 			} catch (NumberFormatException e) {
-			System.out.println("Forgot to click a button");
+				System.out.println("Forgot to click a button to delete");
 			} finally {
 				getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
 			}
