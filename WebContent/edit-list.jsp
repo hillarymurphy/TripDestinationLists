@@ -16,7 +16,7 @@ Trip date: <input type="text" name="month" placeholder="mm" size="4" value="${mo
 <input type="text" name="day" placeholder="dd" size="4" value="${date}">, 
 <input type="text" name="year" placeholder="yyyy" size="4" value="${year}">
 
-Shopper Name: <input type="text" name="touristName" value="${listToEdit.tourist.touristName}"><br />
+Tourist Name: <input type="text" name="touristName" value="${listToEdit.tourist.touristName}"><br />
 
 Available Trips:<br />
 

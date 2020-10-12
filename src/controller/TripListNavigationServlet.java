@@ -71,7 +71,7 @@ public class TripListNavigationServlet extends HttpServlet {
 			request.setAttribute("allTrips", " ");
 			}
 			
-			getServletContext().getRequestDispatcher("/edit-trip.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/edit-list.jsp").forward(request, response);
 			
 			} catch (NumberFormatException e) {
 				request.setAttribute("allTrips", tld.showAllTrips());
@@ -81,9 +81,15 @@ public class TripListNavigationServlet extends HttpServlet {
 			} 
 		} else if (act.equals("add")) {
 			
+			TripHelper daom = new TripHelper();
+			
+			request.setAttribute("allTrips", daom.showAllTrips());
+			
+			if(daom.showAllTrips().isEmpty()){request.setAttribute("allTrips", " ");
+			
+			}
+			
 			getServletContext().getRequestDispatcher("/new-list.jsp").forward(request, response);
 			}
-	}
-
+		}
 }
-

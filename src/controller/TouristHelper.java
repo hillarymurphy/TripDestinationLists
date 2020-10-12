@@ -12,7 +12,7 @@ import model.Tourist;
 
 
 public class TouristHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("WebCarDealerList");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("TripDestinationLists");
 
 	public void insertTourist(Tourist t) {
 		EntityManager em = emfactory.createEntityManager();
