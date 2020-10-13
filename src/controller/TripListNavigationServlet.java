@@ -44,6 +44,7 @@ public class TripListNavigationServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
 			}
 		else if (act.equals("delete")) {
+			// delete list from database
 			try {
 				Integer tempId = Integer.parseInt(request.getParameter("id"));
 				TripListDetails listToDelete = tld.searchForTripListDetailsById(tempId);
@@ -54,6 +55,7 @@ public class TripListNavigationServlet extends HttpServlet {
 				getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
 			}
 		} else if (act.equals("edit")) {
+			// user selected edit - load up TripList info
 			try
 			{ Integer tempId = Integer.parseInt(request.getParameter("id"));
 			TripListDetails listToEdit = tld.searchForTripListDetailsById(tempId);
@@ -80,6 +82,7 @@ public class TripListNavigationServlet extends HttpServlet {
 				getServletContext().getRequestDispatcher("/viewAllTripsListsServlet").forward(request, response);
 			} 
 		} else if (act.equals("add")) {
+			// Add picked? Need to add TripHelper and all trips before going to new list to get available trips to show in list
 			
 			TripHelper daom = new TripHelper();
 			
