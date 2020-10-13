@@ -43,12 +43,13 @@ public class EditTripListDetailsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// Set up TripListDetailsHelper, TripHelper, TouristHelper
 		TripListDetailsHelper tld = new	TripListDetailsHelper();
 		TripHelper th = new TripHelper();
 		TouristHelper toh = new TouristHelper();
 
 		Integer tempId 	= Integer.parseInt(request.getParameter("id"));
-		TripListDetails listToUpdate = tld.searchForTripListDetailsById(tempId);
+		TripListDetails listToUpdate = tld.searchForTripListDetailsById(tempId); // get specific list by id
 		
 		String newListName = request.getParameter("listName");
 		
@@ -69,9 +70,10 @@ public class EditTripListDetailsServlet extends HttpServlet {
 		
 		try {
 			//items are selected in list to add
-			String[] selectedTrips = request.getParameterValues("allTripsToAdd");
+			String[] selectedTrips = request.getParameterValues("allTripsToAdd"); // get all potential lists
 			List<Trip> selectedTripsInList = new ArrayList<Trip>();
 
+			// Available Trips loop
 			for	(int i = 0; i < selectedTrips.length; i++) {
 				System.out.println(selectedTrips[i]);
 				Trip t = th.searchForTripById(Integer.parseInt(selectedTrips[i]));
@@ -85,6 +87,7 @@ public class EditTripListDetailsServlet extends HttpServlet {
 			List<Trip> selectedTripsInList = new ArrayList<Trip>();
 			listToUpdate.setListOfTrips(selectedTripsInList);
 		}
+		// Information for display on screen
 		listToUpdate.setListName(newListName);
 		listToUpdate.setTripDate(ld);
 		listToUpdate.setTourist(newTourist);
