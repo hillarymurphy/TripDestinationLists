@@ -9,6 +9,7 @@
 </head>
 <body>
 <form action="editTripListDetailsServlet" method="post">
+<!-- This portion creates the display of which list, creation date, and tourist name -->
 <input type="hidden" name="id" value="${listToEdit.id}">
 List Name: <input type="text" name="listName" value="${listToEdit.listName}"><br />
 
@@ -19,7 +20,7 @@ Trip date: <input type="text" name="month" placeholder="mm" size="4" value="${mo
 Tourist Name: <input type="text" name="touristName" value="${listToEdit.tourist.touristName}"><br />
 
 Available Trips:<br />
-
+<!-- This creates the list of all possible trips to add to the trip list -->
 <select name="allTripsToAdd" multiple size="6">
 <c:forEach items="${requestScope.allTrips}" var="currentitem">
 <option value = "${currentitem.id}">${currentitem.location} |
