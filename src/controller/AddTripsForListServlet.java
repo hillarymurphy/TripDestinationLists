@@ -26,6 +26,7 @@ public class AddTripsForListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			// Creating new list - pull in TripHelper and get all possible trips from the Trip table
 			TripHelper dao = new TripHelper();
 	       
 	       request.setAttribute("allTrips", dao.showAllTrips());
